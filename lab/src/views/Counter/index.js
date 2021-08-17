@@ -13,7 +13,7 @@ const Counter = (props) => {
                     <Button variant="contained" color="secondary" onClick={props.handleDecrement}>
                     decrement
                     </Button>
-                    <Button variant="contained" onClick={props.changeDisplayFormStatus}>
+                    <Button  onClick={props.changeDisplayFormStatus}>
                     reset
                     </Button>
                     
