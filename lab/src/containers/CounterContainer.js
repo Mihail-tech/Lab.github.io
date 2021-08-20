@@ -1,39 +1,65 @@
-import React, { useState } from 'react';
-import Counter from '../views/Counter';
-import  PropTypes  from 'prop-types';
 
+import React from "react";
 
-const CounterContainer = () => {
+import Counter from "../views/Counter/index";
 
-  let [count, setCount] = useState(0)
+class CounterContainer extends React.Component {
+  
+  constructor(props){
+    super(props);
+    this.prevCount = React.createRef(this.props.count)
+  }
+  
 
-  const handleIncrement = () => {
-    setCount( count + 1)
+  componentDidMount() {
+
   }
 
-  const handleDecrement = () => {
-    setCount(count - 1)
+  componentWillUnmount() {
+
   }
 
-  const changeDisplayFormStatus = () => {
-    setCount(0)
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    const {
+      count,
+      handleEvenNumber,
+      handleOddNumber
+    } = this.props
+
+    if(count > nextProps.this.prevCount.current) {
+      handleEvenNumber()
+    } 
+    if(count < nextProps.this.prevCount.current) {
+      handleOddNumber()
+    }
+
   }
 
-  return (
-    <Counter handleIncrement = {handleIncrement}
-      handleDecrement = {handleDecrement}
-      changeDisplayFormStatus = {changeDisplayFormStatus}
-      count = {count}
-    />
-  )
-}
+  shouldComponentUpdate(nextProps) {
+    const { countValue} = this.props
+    if (countValue === nextProps.countValue) {
+      return false;
+    } else {
+    return true;
+    };
+  }
 
-CounterContainer.propTypes = {
-    handleIncrement: PropTypes.func,
-    handleDecrement: PropTypes.func,
-    changeDisplayFormStatus: PropTypes.func,
-    count: PropTypes.number
+  render() {
+   
+    
+    return (
+      
+      <Counter countValue = {this.props.countValue}
+      handleIncrement = {this.props.handleIncrement}
+      handleDecrement = {this.props.handleDecrement}
+      handleReset = {this.props.handleReset}
+      />
+    );
+  }
 }
 
 
 export default CounterContainer;
+
+
+

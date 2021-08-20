@@ -3,20 +3,25 @@ import Button from '@material-ui/core/Button';
 
 
 
-const Counter = (props) => {
+const Counter = ({
+    countValue,
+    handleIncrement,
+    handleDecrement,
+    handleReset
+}) => {
+    
     return (
                 <div>
-                    <div>{"Current value " + props.count}</div>
-                    <Button variant="contained" color="primary" onClick={props.handleIncrement} >
+                    <div>{"Current value " + countValue}</div>
+                    <Button variant="contained" color="primary" onClick={handleIncrement()} >
                     increment
                     </Button> 
-                    <Button variant="contained" color="secondary" onClick={props.handleDecrement}>
+                    <Button variant="contained" color="secondary" onClick={handleDecrement()}>
                     decrement
                     </Button>
-                    <Button  onClick={props.changeDisplayFormStatus}>
+                    <Button  onClick={handleReset()}>
                     reset
                     </Button>
-                    
                 </div>
             )
 }

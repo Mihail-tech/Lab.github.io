@@ -1,9 +1,9 @@
 import './App.css';
-import CheckCounterContainer from './containers/CounterContainer';
+import CounterContainerParent from './containers/CounterContainerParent';
 
 function App() {
   return (
-    <CheckCounterContainer />
+    <CounterContainerParent />
   );
 }
 
