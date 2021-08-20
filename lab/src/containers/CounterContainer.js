@@ -1,63 +1,68 @@
-
-import React from "react";
-
+/* eslint-disable */
+import React, { useState, useRef, useEffect, useMemo } from "react";
+import PropTypes from "prop-types";
 import Counter from "../views/Counter/index";
 
-class CounterContainer extends React.Component {
-  
-  constructor(props){
-    super(props);
-    this.prevCount = React.createRef(this.props.count)
-  }
-  
+const CounterContainer = ({ count }) => {
+  const [countValue, setCountValue] = useState(0)
 
-  componentDidMount() {
+  const prevCount = useRef(count)
 
-  }
-
-  componentWillUnmount() {
-
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const {
-      count,
-      handleEvenNumber,
-      handleOddNumber
-    } = this.props
-
-    if(count > nextProps.this.prevCount.current) {
+  useEffect(() => {
+    if (count > prevCount.current) {
       handleEvenNumber()
-    } 
-    if(count < nextProps.this.prevCount.current) {
+    }
+    if (count < prevCount.current) {
       handleOddNumber()
     }
+  }, [count])
 
+  const handleIncrement = () => {
+    setCountValue(countValue + 1);
   }
 
-  shouldComponentUpdate(nextProps) {
-    const { countValue} = this.props
-    if (countValue === nextProps.countValue) {
-      return false;
-    } else {
-    return true;
-    };
+  const handleDecrement = () => {
+    setCountValue(countValue - 1)
   }
 
-  render() {
-   
-    
-    return (
-      
-      <Counter countValue = {this.props.countValue}
-      handleIncrement = {this.props.handleIncrement}
-      handleDecrement = {this.props.handleDecrement}
-      handleReset = {this.props.handleReset}
+  const handleReset = () => {
+    setCountValue(0)
+  }
+
+  const handleEvenNumber = () => {
+    if (countValue % 2 === 0) {
+      handleIncrement()
+    }
+  }
+
+  const handleOddNumber = () => {
+    if (countValue % 2 !== 0) {
+      handleDecrement()
+    }
+  }
+
+  const memorize = useMemo(
+    () => (
+      <Counter
+        handleIncrement = {handleIncrement}
+        handleDecrement = {handleDecrement}
+        handleReset = {handleReset}
+        countValue = {countValue}
       />
-    );
-  }
-}
+    ),
+    [countValue],
+  )
 
+  return memorize
+};
+
+CounterContainer.propTypes = {
+  count: PropTypes.number,
+  counterValue: PropTypes.number,
+  handleIncrement: PropTypes.func,
+  handleDecrement: PropTypes.func,
+  handleReset: PropTypes.func
+};
 
 export default CounterContainer;
 
