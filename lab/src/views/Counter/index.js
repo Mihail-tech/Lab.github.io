@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import useStyles from "./styles";
 
 
 const Counter = ({
@@ -9,10 +10,11 @@ const Counter = ({
     handleReset,
 }) => {
   
+  const classes = useStyles();
 
   return (
     <div>
-         <div>{"Current value: " + countValue}</div>
+         <div className = {classes.decorationCurrentValue}>{"Current value: " + countValue}</div>
                 <Button variant="contained" color="primary" onClick = {handleIncrement}>
                 increment
                 </Button>
