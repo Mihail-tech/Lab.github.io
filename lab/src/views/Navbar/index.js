@@ -7,8 +7,11 @@ import {
 import useStyles from "./style";
 
 
+
 const Navbar = () => {
+    
     const classes = useStyles();
+
     return (
         <div className = {classes.navbar}>
                 <NavLink to = "/about" activeClassName = {classes.active} className = {classes.navLink} >

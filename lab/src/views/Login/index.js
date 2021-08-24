@@ -70,7 +70,6 @@ const Login = () => {
         <div>
             <p>email: {JSON.stringify(formik.values.email)}</p>
             <p>pwd: {JSON.stringify(formik.values.password)}</p>
-            
         </div>
       </form>
     </div>
