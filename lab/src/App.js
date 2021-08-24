@@ -10,6 +10,7 @@ import Navbar from "./views/Navbar";
 import About from "./views/About";
 import MistakeOnClient from "./views/MistakeOnClient";
 import CounterContainerParent from "./containers/CounterContainerParent";
+import Login from "./views/Login";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path = "/404">
           <MistakeOnClient />
+        </Route>
+        <Route path = "/login">
+          <Login />
         </Route>
         <Redirect to = "/404" />
 

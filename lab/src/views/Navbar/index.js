@@ -21,6 +21,11 @@ const Navbar = () => {
                         Counter
                     </Button>
                 </NavLink>
+                <NavLink to = "/login" activeClassName = {classes.active} className = {classes.navLink}>
+                    <Button variant="contained" color="primary" >
+                        Login
+                    </Button>
+                </NavLink>
         </div>
     )
 }
