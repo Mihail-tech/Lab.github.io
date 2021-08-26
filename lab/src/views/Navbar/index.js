@@ -9,7 +9,7 @@ import useStyles from "./style";
 
 
 const Navbar = () => {
-    
+
     const classes = useStyles();
 
     return (
@@ -27,6 +27,11 @@ const Navbar = () => {
                 <NavLink to = "/login" activeClassName = {classes.active} className = {classes.navLink}>
                     <Button variant="contained" color="primary" >
                         Login
+                    </Button>
+                </NavLink>
+                <NavLink to = "/login-redux" activeClassName = {classes.active} className = {classes.navLink}>
+                    <Button variant="contained" color="primary" >
+                        Login-Redux
                     </Button>
                 </NavLink>
         </div>

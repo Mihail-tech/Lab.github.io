@@ -1,12 +1,13 @@
 import React from 'react';
-// import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
 import Navbar from '../Navbar';
+import {
+    Link
+} from "react-router-dom";
+import Button from '@material-ui/core/Button';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import FormikTextField from '../../helpers/TextField';
 import FormikPasswordField from '../../helpers/PasswordField';
-import Button from '@material-ui/core/Button';
 import useStyles from "./style";
 
 
@@ -14,9 +15,10 @@ import useStyles from "./style";
 
 
 
-const Login = ({onSubmit}) => {
 
-  const classes = useStyles();
+const LoginRedux = ({onSubmit}) => {
+
+    const classes = useStyles();
 
   const validationSchema = yup.object({
     email: yup
@@ -29,7 +31,6 @@ const Login = ({onSubmit}) => {
       .max(13, 'Password should be of maximum 13 characters length')
       .required('Password is required'),
   });
-
   return (
     <div>
     <Navbar />
@@ -42,14 +43,14 @@ const Login = ({onSubmit}) => {
        onSubmit = {onSubmit}
      >
        {({ values }) => (
-         <Form className = {classes.position} >
+         <Form >
            <Field fullWidth name="email" label="Email" component={FormikTextField} />
-           
            <Field fullWidth color="secondary" name="password" label="Password" type="password" component={FormikPasswordField}  />
-          
-           <Button fullWidth variant="contained" color="primary" type="submit">
-            Sign In
-          </Button>
+            <Link to = "/login-redux/success" className = {classes.link}>
+                <Button fullWidth variant="contained" color="primary" type="submit">
+                    Sign In
+                </Button>
+            </Link>
            <div>
               <p>email: {JSON.stringify(values.email)}</p>
               <p>pwd: {JSON.stringify(values.password)}</p>
@@ -59,6 +60,7 @@ const Login = ({onSubmit}) => {
      </Formik>
     </div>
   );
+
 };
 
-export default Login;
+export default LoginRedux;

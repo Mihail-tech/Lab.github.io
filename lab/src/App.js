@@ -10,7 +10,9 @@ import Navbar from "./views/Navbar";
 import About from "./views/About";
 import MistakeOnClient from "./views/MistakeOnClient";
 import CounterContainerParent from "./containers/CounterContainerParent";
-import Login from "./views/Login";
+import LoginContainer from "./containers/LoginContainer";
+import LoginContainerRedux from "./containers/LoginContainerRedux";
+import SuccessReduxContainer from "./containers/SuccessReduxContainer";
 
 function App() {
   return (
@@ -29,7 +31,13 @@ function App() {
           <MistakeOnClient />
         </Route>
         <Route path = "/login">
-          <Login />
+          <LoginContainer />
+        </Route>
+        <Route exact path = "/login-redux">
+          <LoginContainerRedux />
+        </Route>
+        <Route path = "/login-redux/success">
+          <SuccessReduxContainer />
         </Route>
         <Redirect to = "/404" />
 
