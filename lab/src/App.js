@@ -13,6 +13,7 @@ import CounterContainerParent from "./containers/CounterContainerParent";
 import LoginContainer from "./containers/LoginContainer";
 import LoginContainerRedux from "./containers/LoginContainerRedux";
 import SuccessReduxContainer from "./containers/SuccessReduxContainer";
+import LoginContainerReduxForm from "./containers/LoginContainerReduxForm";
 
 function App() {
   return (
@@ -36,9 +37,15 @@ function App() {
         <Route exact path = "/login-redux">
           <LoginContainerRedux />
         </Route>
-        <Route path = "/login-redux/success">
+        <Route  path = "/login-redux/success">
           <SuccessReduxContainer />
         </Route>
+         {/* <Route exact path = "/login-redux-form">
+            <LoginContainerReduxForm />
+        </Route> */}
+        {/* <Route path = "/login-redux-form/success">
+          <LoginReduxFormSuccess />
+        </Route> */} 
         <Redirect to = "/404" />
 
       </Switch>

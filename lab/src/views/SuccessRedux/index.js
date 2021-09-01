@@ -4,16 +4,17 @@ import useStyles from "./style";
 
 const SuccessRedux = (props) => {
 
-    const {email, password} = props
-
     const classes = useStyles();
 
+    const {email, password} = props.props.appReducer
+    
     return(
         <div className = {classes.center}>
-            hi, {email}, your password: {password}
+           <p>Hi {email}, your password: {password} </p>
         </div>
     )
 }
 
 
 export default SuccessRedux;
+

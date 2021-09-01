@@ -34,6 +34,11 @@ const Navbar = () => {
                         Login-Redux
                     </Button>
                 </NavLink>
+                <NavLink to = "/login-redux-form" activeClassName = {classes.active} className = {classes.navLink}>
+                    <Button variant="contained" color="primary" >
+                        Login-Redux-Form
+                    </Button>
+                </NavLink>
         </div>
     )
 }

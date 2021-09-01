@@ -1,38 +1,67 @@
 import React from 'react';
-import LoginRedux from '../views/LoginRedux';
 import { connect } from 'react-redux';
-import { newEmail, newPassword } from '../Redux/Action/index';
+import LoginRedux from '../views/LoginRedux';
+import { withRouter } from "react-router-dom"
+import {changeEmail, changePassword} from '../Redux/Action/index'
+import PropTypes from "prop-types";
+
+
+
+
+
 
 
 
 
 const LoginContainerRedux = (props) => {
 
+  const { changePassword , changeEmail } = props;
 
-  const onSubmit = (values, reset) => {
-    console.log(JSON.stringify(values, null, 2));
-    reset.resetForm ({
-    });
-  };
-return(
-    <div>
-        <LoginRedux onSubmit = {onSubmit}
-        />
-    </div>
-)
+  
 
-}
-
-const mapStateToProps = (state) => ({
-  email: state.signIn.email,
-  password: state.signIn.password
-})
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    newEmail: (value) => dispatch(newEmail(value)),
-    newPassword: (value) => dispatch(newPassword(value))
+  const handleEmailChange = (event) => {
+    changeEmail(event.target.value);
   }
+    
+  const handlePasswordChange = (event) => {
+    changePassword (event.target.value);
+  }
+    
+  const onHandleSubmit = (event) => {
+    event.preventDefault();
+    props.history.replace('/login-redux/success');
+    
+  }
+        
+        
+  return(
+    <div>
+      <LoginRedux 
+        emailInputChange={handleEmailChange}
+          passwordInputChange={handlePasswordChange}
+          emailOutput={props.appReducer.email}
+          passwordOutput={props.appReducer.password}
+          onSubmit={onHandleSubmit}
+      />
+    </div>
+  )
+
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (LoginContainerRedux);
+const mapStateToProps = (state => ({
+  appReducer: state.appReducer
+}));
+
+const mapDispatchToProps = {
+  changeEmail,
+  changePassword,
+};
+
+
+LoginContainerRedux.propTypes = {
+  changeEmail: PropTypes.func,
+  changePassword: PropTypes.func
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginContainerRedux));
+

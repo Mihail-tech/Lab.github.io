@@ -1,28 +1,18 @@
+import SeccessRedux from '../views/SuccessRedux';
 import React from 'react';
 import { connect } from 'react-redux';
-import SeccessRedux from '../views/SuccessRedux';
-
-
 
 const SuccessReduxContainer = (props) => {
-
-    const {email, password} = props
-
-    return(
+    
+    return (
         <div>
-            <SeccessRedux email = {email}
-                password = {password}
-            />
+            <SeccessRedux props={props} />
         </div>
     )
 }
 
-
-const mapStateToProps = (state) => ({
-    email: state.signIn.email,
-    password: state.signIn.password
+const mapStateToProps = state => ({
+    appReducer: state.appReducer
 })
 
-
-
-export default connect(mapStateToProps) (SuccessReduxContainer);
+export default connect(mapStateToProps)(SuccessReduxContainer);
