@@ -6,7 +6,8 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: '35%' 
+        marginTop: '25%' ,
+        backgroundColor: "#FF5353"
     },
 })
 

@@ -20,28 +20,28 @@ const LoginRedux = ({onSubmit, emailInputChange, passwordInputChange, emailOutpu
      <Formik>
          <Form 
          className = {classes.position}
-         onSubmit={onSubmit}
+         onSubmit = {onSubmit}
         >
-           <Field fullwidth='true' 
-            name="email" 
-            label="Email"  
-            type="email"  
-            placeholder="Email"
-            onChange={emailInputChange} 
+           <Field fullwidth = 'true' 
+            name = "email" 
+            label = "Email"  
+            type = "email"  
+            placeholder = "Email"
+            onChange = {emailInputChange} 
             required/>
-           <Field fullwidth='true' 
-            color="secondary"
-            minLength="6" 
-            name="password" 
-            label="Password" 
-            type="password"  
-            placeholder="Password"
-            onChange={passwordInputChange} 
+           <Field fullwidth = 'true' 
+            color = "secondary"
+            minLength = "6" 
+            name = "password" 
+            label = "Password" 
+            type = "password"  
+            placeholder = "Password"
+            onChange = {passwordInputChange} 
             required/>
                 <Button fullWidth 
-                  variant="contained" 
-                  color="primary" 
-                  type="submit">
+                  variant = "contained" 
+                  color = "primary" 
+                  type = "submit">
                     Sign In
                 </Button>
 

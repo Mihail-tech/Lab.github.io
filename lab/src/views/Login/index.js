@@ -18,31 +18,29 @@ const Login = ({submit, email, emailOutput, password, passwordOutput}) => {
     <Navbar />
      <Formik >
          <Form className = {classes.position} onSubmit={submit} >
-           <Field fullwidth='true' 
-             
-              
-            placeholder="Email"
-            type="email" 
-            onChange={email}
-            value={emailOutput}
+           <Field fullwidth = 'true' 
+             name = "email"
+            placeholder = "Email"
+            type = "email" 
+            onChange = {email}
+            value = {emailOutput}
             required
             />
            
-           <Field fullwidth='true'  
-             
-            minLength="6"
-            placeholder="Password"
-             
-            type="password"  
-            onChange={password}
-            value={passwordOutput} 
+           <Field fullwidth = 'true'  
+             name = "password"
+            minLength = "6"
+            placeholder = "Password"
+            type = "password"  
+            onChange = {password}
+            value = {passwordOutput} 
             required 
             />
           
            <Button fullWidth 
-            variant="contained" 
-            color="primary" 
-            type="submit">
+            variant = "contained" 
+            color = "primary" 
+            type = "submit">
               Sign In
           </Button>
            <div>

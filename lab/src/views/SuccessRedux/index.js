@@ -10,7 +10,7 @@ const SuccessRedux = (props) => {
     
     return(
         <div className = {classes.center}>
-           <p>Hi {email}, your password: {password} </p>
+           <p>Hi, your email: {email}, your password: {password} </p>
         </div>
     )
 }

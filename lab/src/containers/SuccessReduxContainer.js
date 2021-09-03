@@ -11,8 +11,10 @@ const SuccessReduxContainer = (props) => {
     )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     appReducer: state.appReducer
 })
+
+
 
 export default connect(mapStateToProps)(SuccessReduxContainer);

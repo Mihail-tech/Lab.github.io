@@ -1,19 +1,20 @@
-// import React from 'react';
+import React from 'react';
+import useStyles from '../SuccessRedux/style'
 
 
+const SuccessReduxForm = (props) => {
 
-// const SuccessReduxForm = (props) => {
+    console.log(props);
+    const classes = useStyles();
 
+    const {emailValue, passwordValue} = props.props
     
-
-//     const {email, password} = props.props.appReducer
-    
-//     return(
-//         <div >
-//            <p>Hi {email}, your password: {password} </p>
-//         </div>
-//     )
-// }
+    return(
+        <div className = {classes.center} >
+           <p>Hi, your email: {emailValue}, your password: {passwordValue} </p>
+        </div>
+    )
+}
 
 
-// export default SuccessReduxForm;
+export default SuccessReduxForm;

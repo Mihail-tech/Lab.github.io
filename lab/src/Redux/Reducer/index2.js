@@ -8,13 +8,13 @@ const initialState = {
 }
 const appReducer = (state = initialState, action) => {
     switch(action.type) {
-        case CHANGE_EMAIL:{
+        case CHANGE_EMAIL: {
             return  {
               ...state, 
                 email: action.payload,
               }
             }
-        case CHANGE_PASSWORD:{
+        case CHANGE_PASSWORD: {
             return  {
               ...state, 
                 password: action.payload

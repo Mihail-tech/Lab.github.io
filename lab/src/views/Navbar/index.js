@@ -1,9 +1,8 @@
-
 import React from "react";
 import {
     NavLink
 } from "react-router-dom";
-  import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
 import useStyles from "./style";
 
 
@@ -15,27 +14,27 @@ const Navbar = () => {
     return (
         <div className = {classes.navbar}>
                 <NavLink to = "/about" activeClassName = {classes.active} className = {classes.navLink} >
-                    <Button variant="contained" color="primary"  >
+                    <Button variant = "contained" color = "primary"  >
                         About
                     </Button>
                 </NavLink>
                 <NavLink to = "/counter" activeClassName = {classes.active} className = {classes.navLink}>
-                    <Button variant="contained" color="primary" >
+                    <Button variant = "contained" color = "primary" >
                         Counter
                     </Button>
                 </NavLink>
                 <NavLink to = "/login" activeClassName = {classes.active} className = {classes.navLink}>
-                    <Button variant="contained" color="primary" >
+                    <Button variant = "contained" color = "primary" >
                         Login
                     </Button>
                 </NavLink>
                 <NavLink to = "/login-redux" activeClassName = {classes.active} className = {classes.navLink}>
-                    <Button variant="contained" color="primary" >
+                    <Button variant = "contained" color = "primary" >
                         Login-Redux
                     </Button>
                 </NavLink>
                 <NavLink to = "/login-redux-form" activeClassName = {classes.active} className = {classes.navLink}>
-                    <Button variant="contained" color="primary" >
+                    <Button variant = "contained" color = "primary" >
                         Login-Redux-Form
                     </Button>
                 </NavLink>

@@ -1,24 +1,25 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import SuccessReduxForm from '../views/SuccessReduxForm';
 
-// import React from 'react';
-// import { connect } from 'react-redux';
-// import { formValueSelector } from 'redux-form';
-// import SuccessReduxForm from '../views/SuccessReduxForm';
 
-// const LoginReduxFormSuccess = (props) => {
+let LoginReduxFormSuccess = (props) => {
+    console.log(props);
     
-//     return (
-//         <div>
-//             <SuccessReduxForm props={props} />
-//         </div>
-//     )
-// }
-
-// const selector= formValueSelector ('login')
-
-// const mapStateToProps = (state) => ({
-//     emailValue : selector(state, 'email'),
-//     passwordValue : selector(state, 'password')
-// })
+    return (
+        <div>
+            <SuccessReduxForm props = {props} />
+        </div>
+    )
+ }
 
 
-// export default connect(mapStateToProps, null)(LoginReduxFormSuccess);
+const mapStateToProps = state => ({
+    emailValue: state.appReducer.email,
+    passwordValue: state.appReducer.password
+    
+})
+
+
+
+export default connect(mapStateToProps, null)(LoginReduxFormSuccess);

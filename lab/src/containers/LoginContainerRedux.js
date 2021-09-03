@@ -17,7 +17,7 @@ const LoginContainerRedux = (props) => {
 
   const { changePassword , changeEmail } = props;
 
-  
+  console.log(props);
 
   const handleEmailChange = (event) => {
     changeEmail(event.target.value);
