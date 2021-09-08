@@ -6,8 +6,9 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "10%",
-    fontSize: "5em",
+  },
+  decorationList: {
+    listStyleType: "none",
   },
 });
 

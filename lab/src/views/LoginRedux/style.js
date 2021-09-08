@@ -1,12 +1,9 @@
-import { makeStyles } from '@material-ui/core/styles';
-
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-
-    link: {
-        textDecoration: "none"
-    },
-  
-})
+  link: {
+    textDecoration: "none",
+  },
+});
 
 export default useStyles;

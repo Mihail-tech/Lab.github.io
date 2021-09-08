@@ -1,15 +1,4 @@
-import { CHANGE_EMAIL, CHANGE_PASSWORD } from "./index2";
+import { createAction } from "redux-actions";
 
-
-
-export const changeEmail = (email) => ({
-    type: CHANGE_EMAIL ,
-    payload: email
-    
-});
-
-export const changePassword = (password) => ({
-    type: CHANGE_PASSWORD,
-    payload: password
-    
-});
+export const changeEmail = createAction("CHANGE_EMAIL");
+export const changePassword = createAction("CHANGE_PASSWORD");

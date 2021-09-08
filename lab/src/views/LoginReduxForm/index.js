@@ -7,17 +7,10 @@ import { Field, Form } from 'redux-form';
 import {  reduxForm  } from 'redux-form';
 
 
+let LoginReduxForm = ({handleSubmit, emailValue, passwordValue}) => {
 
+  const classes = useStyles();
 
-
-
-
-let LoginReduxForm = (props) => {
-
-    const classes = useStyles();
-
-    const {handleSubmit, emailValue, passwordValue} = props
-  
   return (
     <div>
     <Navbar />
@@ -46,7 +39,6 @@ let LoginReduxForm = (props) => {
                   type = "submit">
                     Sign In
                 </Button>
-
            <div>
               <p>email: {JSON.stringify(emailValue)}</p>
               <p>pwd: {JSON.stringify(passwordValue)}</p>
@@ -55,15 +47,10 @@ let LoginReduxForm = (props) => {
      </Formik>
     </div>
   );
-
 };
 
 LoginReduxForm = reduxForm({
     form: 'login',
-
 })(LoginReduxForm)
 
-
-
 export default LoginReduxForm;
-

@@ -43,8 +43,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "indent": "off"
+    }
   },
+  "eslintIgnore": [
+    "CounterContainer.js"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
