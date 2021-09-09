@@ -5,6 +5,7 @@ import Navbar from "../Navbar";
 import PropTypes from "prop-types";
 import { generateList } from "../helper";
 
+
 const CounterParent = ({
   count,
   handleCreateCounter,
