@@ -3,9 +3,10 @@ import Button from "@material-ui/core/Button";
 import useStyles from "./style";
 import Navbar from "../Navbar";
 import PropTypes from "prop-types";
+import { generateList } from "../helper";
 
 const CounterParent = ({
-  list,
+  count,
   handleCreateCounter,
   handleRemoveCounter,
   handleResetCounters,
@@ -35,7 +36,7 @@ const CounterParent = ({
         </div>
         <div>
           <ul>
-            <li className={classes.decorationList}>{list}</li>
+            <li className={classes.decorationList}> {generateList(count)}</li>
           </ul>
         </div>
       </div>

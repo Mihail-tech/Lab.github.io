@@ -17,11 +17,11 @@ const LoginContainer = () => {
   };
 
   const onEmailChange = (event) => {
-    setState({ email: event.target.value });
+    setState(prevValues => ({ ...prevValues, email: event.target.value }))
   };
 
   const onPasswordChange = (event) => {
-    setState({ password: event.target.value });
+    setState(prevValues => ({ ...prevValues, password: event.target.value }))
   };
 
   return (
